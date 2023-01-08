@@ -136,7 +136,6 @@ let greatestLossesMonth = (monthArray[decreaseArrayIndex]);
 
 
 // Logging the data to the console
-
 console.log("Financial Analysis")
 console.log("----------------------------");
 console.log("Total Months: " + totalMonths);
