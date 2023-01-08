@@ -86,3 +86,21 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+//Store the number of months in a variable
+let totalMonths = finances.length;
+
+// Net total over the entire period
+// let profitLosses = finances.map
+
+
+// for (let i = 0; i = finances.length; i++){
+//     netTotal += finances[i][1];
+// }
+
+let netTotal = finances.map(row => row[1]).reduce((A,B) => A + B);
+
+console.log(netTotal);
+
+
+
