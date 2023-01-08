@@ -93,9 +93,11 @@ let totalMonths = finances.length;
 
 // Net total over the entire period
 let profitArray = [];
+let monthArray = [];
 
 for(let i = 0; i < finances.length; i++){ 
     profitArray.push(finances[i][1]);
+    monthArray.push(finances[i][0]);
 }
 
 let netTotal = profitArray.reduce((A,B) => A + B);
@@ -115,6 +117,35 @@ let total = changes.reduce((A,B) => A + B);
 let averageChange = (total / finances.length);
 
 averageChange = averageChange.toFixed(2);
+
+
+// Greatest increase in profits
+greatestProfit = Math.max(...changes);
+
+let increaseArrayIndex = changes.indexOf(greatestProfit);
+
+let greatestProfitMonth = (monthArray[increaseArrayIndex]);
+
+
+// Greatest decrease in losses
+greatestLosses = Math.min(...changes);
+
+let decreaseArrayIndex = changes.indexOf(greatestLosses);
+
+let greatestLossesMonth = (monthArray[decreaseArrayIndex]);
+
+
+// Logging the data to the console
+console.log("Financial Analysis")
+console.log("----------------------------");
+console.log("Total Months: " + totalMonths);
+console.log("Total: $" + netTotal);
+console.log("Average Change: $" + averageChange);
+console.log("Greatest Increase in Profits: " + greatestProfitMonth + " ($" + greatestProfit + ")");
+console.log("Greatest Decrease in Losses: " + greatestLossesMonth + " ($" + greatestLosses + ")");
+
+
+
 
 
 
