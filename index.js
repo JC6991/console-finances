@@ -87,20 +87,45 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-//Store the number of months in a variable
+// Store the number of months in a variable
 let totalMonths = finances.length;
 
+
 // Net total over the entire period
-// let profitLosses = finances.map
+let profitArray = [];
+
+for(let i = 0; i < finances.length; i++){ 
+    profitArray.push(finances[i][1]);
+}
+
+let netTotal = profitArray.reduce((A,B) => A + B);
 
 
-// for (let i = 0; i = finances.length; i++){
-//     netTotal += finances[i][1];
-// }
+// Calculate average of the changes in profits/losses 
+let changes = [];
 
-let netTotal = finances.map(row => row[1]).reduce((A,B) => A + B);
+for (let i = 0; i < (finances.length - 1); i++){
+    changes.push(profitArray[i + 1] - profitArray[i]);
+}
 
-console.log(netTotal);
+changes.splice(0, 0, 867884);
+
+let total = changes.reduce((A,B) => A + B);
+
+let averageChange = (total / finances.length);
+
+averageChange = averageChange.toFixed(2);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
